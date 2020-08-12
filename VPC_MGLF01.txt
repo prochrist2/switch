@@ -1,0 +1,77 @@
+config
+feature vpc
+feature lacp
+
+
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 100
+  peer-keepalive destination 10.10.10.2 source 10.10.10.1 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+ 
+interface port-channel999
+  description ##### inter-link #####
+  switchport
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+
+interface Ethernet1/6
+  no switchport
+  description ### vpc_keepalive_link ###
+  vrf member pkal
+  ip address 10.10.10.1/30
+  no shutdown
+
+ 
+interface Ethernet1/7
+  no switchport
+  description ### MGSP01_E1/7 ###
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+  no shutdown
+
+ 
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+  no shutdown
+
+
+interface Ethernet1/3
+  description ### MGLF01-m2_Eth1/3 ###
+  switchport
+  switchport mode trunk
+  channel-group 999 mode active
+  no shutdown
+
+ 
+interface Ethernet1/4
+  description ### MGLF01-m2_Eth1/4 ###
+  switchport
+  switchport mode trunk
+  channel-group 999 mode active
+  no shutdown
+end
