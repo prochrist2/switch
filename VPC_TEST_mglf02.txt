@@ -1,0 +1,2541 @@
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# 2021 May 14 12:44:18 mglf02 %$ VDC-1 %$ %STP-2-VPC_PEER_LINK_INCONSIST_BLOCK: vPC peer-link detected !BPDU receive timeout blocking port-channel999 VLAN0050.
+2021 May 14 12:44:19 mglf02 %$ VDC-1 %$ %STP-2-VPC_PEER_LINK_INCONSIST_BLOCK: vPC peer-link detected !BPDU receive timeout blocking port-channel999 VLAN0001.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/4        1       eth  trunk  up      none                       1000(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/4        1       eth  trunk  up      initializing               1000(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+--More--2021 May 14 12:44:32 mglf02 %$ VDC-1 %$ %VPC-2-VPC_SUSP_ALL_VPC: Peer-link going down, suspending all vPCs on secondary. If vfc is bound to vPC, then only ethernet vlans of that VPC shall be down.
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/4        1       eth  trunk  down    initializing               auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/8        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/4        1       eth  trunk  down    initializing               auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/8        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+mglf02#
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/4        1       eth  trunk  down    suspended(no LACP PDUs)    auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/8        1       eth  trunk  down    suspended by vpc           auto(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+mglf02#
+mglf02# show interface description
+
+-------------------------------------------------------------------------------
+Interface                Description
+-------------------------------------------------------------------------------
+mgmt0                    --
+
+-------------------------------------------------------------------------------
+Port          Type   Speed   Description
+-------------------------------------------------------------------------------
+Eth1/1        eth    10G     --
+Eth1/2        eth    10G     --
+Eth1/3        eth    10G     ### MGLF01_Eth1/3 ###
+Eth1/4        eth    10G     ### MGLF01_Eth1/4 ###
+Eth1/5        eth    10G     --
+Eth1/6        eth    10G     ### vpc_keepalive_link ###
+Eth1/7        eth    10G     ### MGSP01_E1/8 ###
+Eth1/8        eth    10G     ### MGSP02_E1/7 ###
+Eth1/9        eth    10G     --
+Eth1/10       eth    10G     --
+Eth1/11       eth    10G     --
+Eth1/12       eth    10G     --
+Eth1/13       eth    10G     --
+Eth1/14       eth    10G     --
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# interface eth1/6
+mglf02(config-if)#
+mglf02(config-if)#
+mglf02(config-if)# shutdown
+mglf02(config-if)# end
+mglf02#
+mglf02#
+mglf02#
+mglf02# 2021 May 14 12:45:36 mglf02 %$ VDC-1 %$ %VPC-2-PEER_KEEP_ALIVE_RECV_FAIL: In domain 101, VPC peer keep-alive receive has failed
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is not reachable through peer-keepalive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         down   success     Type checks were      -
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is not reachable through peer-keepalive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is not reachable through peer-keepalive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is not reachable through peer-keepalive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# interface eth1/6
+mglf02(config-if)#
+mglf02(config-if)#
+mglf02(config-if)# no shutdown
+mglf02(config-if)# end
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# copy running-config startup-config
+[########################################] 100%
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02#
+mglf02#
+mglf02# show interface description
+
+-------------------------------------------------------------------------------
+Interface                Description
+-------------------------------------------------------------------------------
+mgmt0                    --
+
+-------------------------------------------------------------------------------
+Port          Type   Speed   Description
+-------------------------------------------------------------------------------
+Eth1/1        eth    10G     --
+Eth1/2        eth    10G     --
+Eth1/3        eth    10G     ### MGLF01_Eth1/3 ###
+Eth1/4        eth    10G     ### MGLF01_Eth1/4 ###
+Eth1/5        eth    10G     --
+Eth1/6        eth    10G     ### vpc_keepalive_link ###
+Eth1/7        eth    10G     ### MGSP01_E1/8 ###
+Eth1/8        eth    10G     ### MGSP02_E1/7 ###
+Eth1/9        eth    10G     --
+Eth1/10       eth    10G     --
+Eth1/11       eth    10G     --
+Eth1/12       eth    10G     --
+Eth1/13       eth    10G     --
+Eth1/14       eth    10G     --
+mglf02#
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# interface eth1/7-8
+mglf02(config-if-range)#
+mglf02(config-if-range)#
+mglf02(config-if-range)# exit
+mglf02(config)# itnereth1/3-4
+                 ^
+% Invalid command at '^' marker.
+mglf02(config)# interface eth1/3-4
+mglf02(config-if-range)# shutdown
+mglf02(config-if-range)# end
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+Eth1/35       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     Type checks were      50
+
+                                       bypassed for the vPC
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02#
+mglf02# show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           down   --                                      --       1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Por
+t
+Interface                                                                    Ch
+#
+--------------------------------------------------------------------------------
+Eth1/1        50      eth  access up      none                       1000(D) --
+Eth1/2        1       eth  access up      none                       1000(D) --
+Eth1/3        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/4        1       eth  trunk  down    Administratively down      auto(D) 999
+Eth1/5        1       eth  access up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  trunk  up      none                       1000(D) 101
+Eth1/8        1       eth  trunk  up      none                       1000(D) 101
+Eth1/9        1       eth  access up      none                       1000(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# interface eth1/3-4
+mglf02(config-if-range)# no shutdown
+mglf02(config-if-range)# end
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# 2021 May 14 12:54:20 mglf02 %$ VDC-1 %$ %COPP-2-COPP_NO_POLICY: Control-plane is unprotected.
+
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 12:55:57 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 200
+  peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  switchport access vlan 50
+mglf02#
+mglf02#
+mglf02#
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 12:57:18 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 200
+  peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  switchport access vlan 50
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+  description ### MGLF01_Eth1/3 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/4
+  description ### MGLF01_Eth1/4 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+  description ### vpc_keepalive_link ###
+  no switchport
+  vrf member pkal
+  ip address 10.10.10.2/30
+  no shutdown
+
+interface Ethernet1/7
+  description ### MGSP01_E1/8 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+interface Ethernet1/15
+
+interface Ethernet1/16
+
+interface Ethernet1/17
+
+interface Ethernet1/18
+
+interface Ethernet1/19
+
+interface Ethernet1/20
+
+interface Ethernet1/21
+
+interface Ethernet1/22
+
+interface Ethernet1/23
+
+interface Ethernet1/24
+
+interface Ethernet1/25
+
+interface Ethernet1/26
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+
+interface Ethernet1/30
+
+interface Ethernet1/31
+
+interface Ethernet1/32
+
+interface Ethernet1/33
+
+interface Ethernet1/34
+
+interface Ethernet1/35
+
+interface Ethernet1/36
+
+interface Ethernet1/37
+
+interface Ethernet1/38
+
+interface Ethernet1/39
+
+interface Ethernet1/40
+
+interface Ethernet1/41
+
+interface Ethernet1/42
+
+interface Ethernet1/43
+
+interface Ethernet1/44
+
+interface Ethernet1/45
+
+interface Ethernet1/46
+
+interface Ethernet1/47
+
+interface Ethernet1/48
+
+interface Ethernet1/49
+
+interface Ethernet1/50
+
+interface Ethernet1/51
+
+interface Ethernet1/52
+
+interface Ethernet1/53
+
+interface Ethernet1/54
+
+interface Ethernet1/55
+
+interface Ethernet1/56
+
+interface Ethernet1/57
+
+interface Ethernet1/58
+
+interface Ethernet1/59
+
+interface Ethernet1/60
+
+interface Ethernet1/61
+
+interface Ethernet1/62
+
+interface Ethernet1/63
+
+interface Ethernet1/64
+
+interface Ethernet1/65
+
+interface Ethernet1/66
+
+interface Ethernet1/67
+
+interface Ethernet1/68
+
+interface Ethernet1/69
+
+interface Ethernet1/70
+
+interface Ethernet1/71
+
+interface Ethernet1/72
+
+interface Ethernet1/73
+
+interface Ethernet1/74
+
+interface Ethernet1/75
+
+interface Ethernet1/76
+
+interface Ethernet1/77
+
+interface Ethernet1/78
+
+interface Ethernet1/79
+
+interface Ethernet1/80
+
+interface Ethernet1/81
+
+interface Ethernet1/82
+
+interface Ethernet1/83
+
+interface Ethernet1/84
+
+interface Ethernet1/85
+
+interface Ethernet1/86
+
+interface Ethernet1/87
+
+interface Ethernet1/88
+
+interface Ethernet1/89
+
+interface Ethernet1/90
+
+interface Ethernet1/91
+
+interface Ethernet1/92
+
+interface Ethernet1/93
+
+interface Ethernet1/94
+
+interface Ethernet1/95
+
+interface Ethernet1/96
+
+interface Ethernet1/97
+
+interface Ethernet1/98
+
+interface Ethernet1/99
+
+interface Ethernet1/100
+
+interface Ethernet1/101
+
+interface Ethernet1/102
+
+interface Ethernet1/103
+
+interface Ethernet1/104
+
+interface Ethernet1/105
+
+interface Ethernet1/106
+
+interface Ethernet1/107
+
+interface Ethernet1/108
+
+interface Ethernet1/109
+
+interface Ethernet1/110
+
+interface Ethernet1/111
+
+interface Ethernet1/112
+
+interface Ethernet1/113
+
+interface Ethernet1/114
+
+interface Ethernet1/115
+
+interface Ethernet1/116
+
+interface Ethernet1/117
+
+interface Ethernet1/118
+
+interface Ethernet1/119
+
+interface Ethernet1/120
+
+interface Ethernet1/121
+
+interface Ethernet1/122
+
+interface Ethernet1/123
+
+interface Ethernet1/124
+
+interface Ethernet1/125
+
+interface Ethernet1/126
+
+interface Ethernet1/127
+
+interface Ethernet1/128
+
+interface mgmt0
+  vrf member management
+line console
+line vty
+
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 12:57:44 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 200
+  peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  switchport access vlan 50
+mglf02#
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# no vpc domain 101
+2021 May 14 12:59:18 mglf02 %$ VDC-1 %$ stp: Please note that spanning tree port type is changed to "default" port type on "no vPC peer-link"
+2021 May 14 12:59:18 mglf02 %$ VDC-1 %$ %VPC-2-PEER_KEEP_ALIVE_RECV_FAIL: In domain 101, VPC peer keep-alive receive has failed
+2021 May 14 12:59:18 mglf02 %$ VDC-1 %$ %VPC-2-PEER_KEEP_ALIVE_SEND_FAIL: In domain 101, VPC peer keep-alive send has failed
+2021 May 14 12:59:18 mglf02 %$ VDC-1 %$ %STP-2-VPC_PEERSWITCH_CONFIG_DISABLED: vPC peer-switch configuration is disabled. Please make sure to change spanning tree "bridge" priority as per the recommended guidelines.
+
+
+
+
+
+
+
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)#
+mglf02(config)# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : Not configured
+Peer status                       : peer link not configured
+vPC keep-alive status             : Disabled
+Configuration consistency status  : failed
+Per-vlan consistency status       : failed
+Configuration inconsistency reason: vPC peer-link does not exist
+Type-2 consistency status         : failed
+Type-2 inconsistency reason       : vPC peer-link does not exist
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 0
+Peer Gateway                      : Disabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Disabled
+Delay-restore status              : Timer is off.(timeout = 30s)
+Delay-restore SVI status          : Timer is off.(timeout = 10s)
+Operational Layer3 Peer-router    : Disabled
+mglf02(config)#
+mglf02(config)# end
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : Not configured
+Peer status                       : peer link not configured
+vPC keep-alive status             : Disabled
+Configuration consistency status  : failed
+Per-vlan consistency status       : failed
+Configuration inconsistency reason: vPC peer-link does not exist
+Type-2 consistency status         : failed
+Type-2 inconsistency reason       : vPC peer-link does not exist
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 0
+Peer Gateway                      : Disabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Disabled
+Delay-restore status              : Timer is off.(timeout = 30s)
+Delay-restore SVI status          : Timer is off.(timeout = 10s)
+Operational Layer3 Peer-router    : Disabled
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 13:01:31 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+
+interface Ethernet1/1
+  switchport access vlan 50
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+  description ### MGLF01_Eth1/3 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/4
+  description ### MGLF01_Eth1/4 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+  description ### vpc_keepalive_link ###
+  no switchport
+  vrf member pkal
+  ip address 10.10.10.2/30
+  no shutdown
+
+interface Ethernet1/7
+  description ### MGSP01_E1/8 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+interface Ethernet1/15
+
+interface Ethernet1/16
+
+interface Ethernet1/17
+
+interface Ethernet1/18
+
+interface Ethernet1/19
+
+interface Ethernet1/20
+
+interface Ethernet1/21
+
+interface Ethernet1/22
+
+interface Ethernet1/23
+
+interface Ethernet1/24
+
+interface Ethernet1/25
+
+interface Ethernet1/26
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+
+interface Ethernet1/30
+
+interface Ethernet1/31
+
+interface Ethernet1/32
+
+interface Ethernet1/33
+
+mglf02# show running-config interface port-channel 101
+
+!Command: show running-config interface port-channel101
+!Time: Fri May 14 13:01:54 2021
+
+version 7.0(3)I7(3)
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+
+mglf02#
+mglf02#
+mglf02# configure
+Enter configuration commands, one per line. End with CNTL/Z.
+mglf02(config)# vpc domain 101
+##
+  no switchport
+  vrf member pkal
+  ip address 10.10.10.2/30
+  no shutdown
+
+interface Ethernet1/7
+  description ### MGSP01_E1/8 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+2021 May 14 13:02:09 mglf02 %$ VDC-1 %$ %STP-2-VPC_PEERSWITCH_CONFIG_DISABLED: vPC peer-switch configuration is disabled. Please make sure to change spanning tree "bridge" priority as per the recommended guidelines.
+mglf02(config-vpc-domain)#   peer-switch
+2021 May 14 13:02:09 mglf02 %$ VDC-1 %$ %STP-2-VPC_PEERSWITCH_CONFIG_ENABLED: vPC peer-switch configuration is enabled. Please make sure to configure spanning tree "bridge" priority as per recommended guidelines to make vPC peer-switch operational.
+mglf02(config-vpc-domain)#   role priority 200
+Note:
+ Change will take effect after user has:
+   1. Triggered "vpc role preempt" (non-disruptive - no traffic loss on STP root switch)
+OR 2. Re-initd the vPC peer-link (disruptive)
+Warning:
+ !!:: vPCs will be flapped on current primary vPC switch while attempting option 2 ::!!
+mglf02(config-vpc-domain)#   peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+mglf02(config-vpc-domain)#   delay restore 1
+mglf02(config-vpc-domain)#   peer-gateway
+mglf02(config-vpc-domain)#   layer3 peer-router
+mglf02(config-vpc-domain)#   no layer3 peer-router syslog
+mglf02(config-vpc-domain)#   auto-recovery
+mglf02(config-vpc-domain)#   delay restore interface-vlan 1
+mglf02(config-vpc-domain)#   ipv6 nd synchronize
+mglf02(config-vpc-domain)#   ip arp synchronize
+mglf02(config-vpc-domain)#
+mglf02(config-vpc-domain)# interface Vlan1
+mglf02(config-if)#   no ip redirects
+mglf02(config-if)#   no ipv6 redirects
+mglf02(config-if)#
+mglf02(config-if)# interface port-channel101
+mglf02(config-if)#   description ##### vPC_Up_to_MGSP #####
+mglf02(config-if)#   switchport mode trunk
+mglf02(config-if)#   switchport trunk allowed vlan 10,20,30,40,50,60,99
+mglf02(config-if)#   vpc 101
+mglf02(config-if)#
+mglf02(config-if)# interface port-channel999
+mglf02(config-if)#   description ##### inter-link #####
+mglf02(config-if)#   switchport mode trunk
+mglf02(config-if)#   spanning-tree port type network
+mglf02(config-if)#   vpc peer-link
+2021 May 14 13:02:10 mglf02 %$ VDC-1 %$ stp: Please note that spanning tree port type is changed to "network" port type on vPC peer-link. This will enable spanning tree Bridge Assurance on vPC peer-link provided the STP Bridge Assurance (which is enabled by default) is not disabled.
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/1
+mglf02(config-if)#   switchport access vlan 50
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/2
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/3
+mglf02(config-if)#   description ### MGLF01_Eth1/3 ###
+mglf02(config-if)#   switchport mode trunk
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   channel-group 999 mode active
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/4
+mglf02(config-if)#   description ### MGLF01_Eth1/4 ###
+mglf02(config-if)#   switchport mode trunk
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   channel-group 999 mode active
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/5
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/6
+mglf02(config-if)#   description ### vpc_keepalive_link ###
+mglf02(config-if)#   no switchport
+mglf02(config-if)#   vrf member pkal
+mglf02(config-if)#   ip address 10.10.10.2/30
+mglf02(config-if)#   no shutdown
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/7
+mglf02(config-if)#   description ### MGSP01_E1/8 ###
+mglf02(config-if)#   switchport mode trunk
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   switchport trunk allowed vlan 10,20,30,40,50,60,99
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   channel-group 101 mode active
+mglf02(config-if)#
+mglf02(config-if)# interface Ethernet1/8
+mglf02(config-if)#   description ### MGSP02_E1/7 ###
+mglf02(config-if)#   switchport mode trunk
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   switchport trunk allowed vlan 10,20,30,40,50,60,99
+                              ^
+% Invalid command at '^' marker.
+mglf02(config-if)#   channel-group 101 mode active
+mglf02(config-if)#
+mglf02(config-if)#
+mglf02(config-if)#
+mglf02(config-if)# end
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 13:02:23 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 200
+  peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  switchport access vlan 50
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+  description ### MGLF01_Eth1/3 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/4
+  description ### MGLF01_Eth1/4 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+  description ### vpc_keepalive_link ###
+  no switchport
+  vrf member pkal
+  ip address 10.10.10.2/30
+  no shutdown
+
+interface Ethernet1/7
+  description ### MGSP01_E1/8 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+mglf02#
+mglf02#
+mglf02#
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer link is down
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : failed
+Per-vlan consistency status       : success
+Configuration inconsistency reason: Consistency Check Not Performed
+Type-2 inconsistency reason       : Consistency Check Not Performed
+vPC role                          : secondary, operational primary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Disabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  down   -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         down   Not         Consistency Check Not -
+
+                           Applicable   Performed
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : failed
+Per-vlan consistency status       : success
+Configuration inconsistency reason:
+Type-2 inconsistency reason       : Consistency Check Not Performed
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         down*  failed      Global compat check   -
+
+                                       failed
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : failed
+Per-vlan consistency status       : success
+Configuration inconsistency reason:
+Type-2 inconsistency reason       : Consistency Check Not Performed
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     -
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         down*  failed      Global compat check   -
+
+                                       failed
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         down*  Not         Consistency Check Not -
+
+                           Applicable   Performed
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show running-config
+
+!Command: show running-config
+!Time: Fri May 14 13:02:53 2021
+
+version 7.0(3)I7(3)
+hostname mglf02
+vdc mglf02 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+
+username admin password 5 $5$geQWcrF/$0LADxLwG2ZQ6O1rtYplG3GH.4uCbaEc2XBCBhVHD.l
+.  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x185b126644b1c6d44547a00a630e67e8
+ priv 0x185b126644b1c6d44547a00a630e67e8 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,50
+vlan 50
+  name VNF_OAM
+
+vrf context management
+vrf context pkal
+vpc domain 101
+  peer-switch
+  role priority 200
+  peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf pkal
+  delay restore 1
+  peer-gateway
+  layer3 peer-router
+  no layer3 peer-router syslog
+  auto-recovery
+  delay restore interface-vlan 1
+  ipv6 nd synchronize
+  ip arp synchronize
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface port-channel101
+  description ##### vPC_Up_to_MGSP #####
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  vpc 101
+
+interface port-channel999
+  description ##### inter-link #####
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  switchport access vlan 50
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+  description ### MGLF01_Eth1/3 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/4
+  description ### MGLF01_Eth1/4 ###
+  switchport mode trunk
+  channel-group 999 mode active
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+  description ### vpc_keepalive_link ###
+  no switchport
+  vrf member pkal
+  ip address 10.10.10.2/30
+  no shutdown
+
+interface Ethernet1/7
+  description ### MGSP01_E1/8 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/8
+  description ### MGSP02_E1/7 ###
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,30,40,50,60,99
+  channel-group 101 mode active
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+mglf02#
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+
+mglf02# show vpc brief
+Legend:
+                (*) - local vPC is down, forwarding via vPC peer-link
+
+vPC domain id                     : 101
+Peer status                       : peer adjacency formed ok
+vPC keep-alive status             : peer is alive
+Configuration consistency status  : success
+Per-vlan consistency status       : success
+Type-2 consistency status         : success
+vPC role                          : secondary
+Number of vPCs configured         : 1
+Peer Gateway                      : Enabled
+Dual-active excluded VLANs        : -
+Graceful Consistency Check        : Enabled
+Auto-recovery status              : Enabled, timer is off.(timeout = 240s)
+Delay-restore status              : Timer is off.(timeout = 1s)
+Delay-restore SVI status          : Timer is off.(timeout = 1s)
+Operational Layer3 Peer-router    : Enabled
+
+vPC Peer-link status
+---------------------------------------------------------------------
+id    Port   Status Active vlans
+--    ----   ------ -------------------------------------------------
+1     Po999  up     1,50
+
+
+vPC status
+----------------------------------------------------------------------------
+Id    Port          Status Consistency Reason                Active vlans
+--    ------------  ------ ----------- ------                ---------------
+101   Po101         up     success     success               50
+
+
+
+
+Please check "show vpc consistency-parameters vpc <vpc-num>" for the
+consistency reason of down vpc and for type-2 consistency reasons for
+any vpc.
+

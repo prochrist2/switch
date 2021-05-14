@@ -1,0 +1,8 @@
+
+
+vPC role                          : secondary, operational primary	### vpc seconday 가 primary 역할을 할때 이렇게 표시됨
+
+vPC role                          : primary, operational secondary	### vpc primary 가 seconday 역할을 할 때 이렇게 표시됨
+
+
+vPC role 절체 명령어는 없음. 스위치를 reload 시킴
